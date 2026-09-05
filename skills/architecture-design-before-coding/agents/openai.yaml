@@ -1,0 +1,4 @@
+interface:
+  display_name: "Architecture Design Before Coding"
+  short_description: "Plan architecture before implementation."
+  default_prompt: "Use $architecture-design-before-coding to design the architecture before implementing this change."

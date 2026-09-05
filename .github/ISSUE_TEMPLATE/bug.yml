@@ -1,0 +1,58 @@
+name: Bug 报告
+description: 报告可重复的软件问题；请勿附加真实备份或私人内容。
+title: "[Bug] "
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: 感谢反馈。安全漏洞请改用仓库的私密安全报告入口。
+  - type: input
+    id: version
+    attributes:
+      label: LifeTally 版本
+      placeholder: 例如 0.1.0
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: 浏览器与操作系统
+      placeholder: 例如 Chrome 138 / Windows 11
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: 复现步骤
+      description: 使用虚构数据描述最短复现路径。
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: 预期结果
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: 实际结果
+    validations:
+      required: true
+  - type: dropdown
+    id: data-impact
+    attributes:
+      label: 是否影响本地数据
+      options:
+        - 否
+        - 可能影响
+        - 已确认影响
+    validations:
+      required: true
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: 隐私确认
+      options:
+        - label: 我没有上传真实备份、API 密钥或私人事项内容。
+          required: true

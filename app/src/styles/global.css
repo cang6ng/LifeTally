@@ -1,0 +1,186 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow: hidden;
+}
+
+#root {
+  width: 100vw;
+  height: 100vh;
+}
+
+.app-container {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.app-content {
+  text-align: center;
+  color: white;
+  padding: 40px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.app-content h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.app-content p {
+  font-size: 20px;
+  margin: 10px 0;
+  opacity: 0.9;
+}
+
+/* Ant Design 按钮玻璃态覆盖 */
+.ant-btn-primary {
+  background: rgba(102, 126, 234, 0.3) !important;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(102, 126, 234, 0.5) !important;
+  box-shadow: 0 2px 8px rgba(102, 126, 234, 0.2);
+  transition: var(--transition-glass);
+}
+
+.ant-btn-primary:hover {
+  background: rgba(102, 126, 234, 0.4) !important;
+  backdrop-filter: blur(15px);
+  box-shadow: 0 4px 16px rgba(102, 126, 234, 0.3);
+  transform: translateY(-1px);
+}
+
+.ant-btn-primary:active {
+  transform: translateY(0) scale(0.98);
+}
+
+.ant-btn:not(.ant-btn-primary) {
+  background: rgba(255, 255, 255, 0.1) !important;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  color: rgba(255, 255, 255, 0.9) !important;
+  transition: var(--transition-glass);
+}
+
+.ant-btn:not(.ant-btn-primary):hover {
+  background: rgba(255, 255, 255, 0.15) !important;
+  backdrop-filter: blur(15px);
+  box-shadow: 0 2px 12px rgba(255, 255, 255, 0.15);
+  transform: translateY(-1px);
+}
+
+.ant-btn:not(.ant-btn-primary):active {
+  transform: translateY(0) scale(0.98);
+}
+
+.ant-btn-dangerous {
+  background: rgba(255, 77, 79, 0.2) !important;
+  border-color: rgba(255, 77, 79, 0.5) !important;
+  color: #ff4d4f !important;
+}
+
+.ant-btn-dangerous:hover {
+  background: rgba(255, 77, 79, 0.3) !important;
+  box-shadow: 0 4px 16px rgba(255, 77, 79, 0.3);
+}
+
+/* Modal 玻璃态样式 */
+.ant-modal-content {
+  background: rgba(255, 255, 255, 0.08) !important;
+  backdrop-filter: blur(20px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3) !important;
+}
+
+.ant-modal-header {
+  background: transparent !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+.ant-modal-footer {
+  background: transparent !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+  padding: 16px !important;
+}
+
+.ant-modal-body {
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+
+.ant-modal-footer .ant-btn {
+  min-height: 32px !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  background: rgba(255, 255, 255, 0.1) !important;
+  backdrop-filter: blur(10px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+}
+
+.ant-modal-confirm-btns {
+  display: flex !important;
+  gap: 8px !important;
+  justify-content: flex-end !important;
+}
+
+.ant-modal-confirm-btns .ant-btn {
+  display: inline-block !important;
+}
+
+/* Modal confirm 特殊修复 */
+.ant-modal-confirm .ant-modal-confirm-btns {
+  margin-top: 16px !important;
+}
+
+.ant-modal-confirm .ant-modal-confirm-btns .ant-btn {
+  background: rgba(255, 255, 255, 0.15) !important;
+  border: 1px solid rgba(255, 255, 255, 0.3) !important;
+  color: #fff !important;
+  padding: 4px 16px !important;
+  height: auto !important;
+  line-height: 1.5 !important;
+}
+
+.ant-modal-confirm .ant-modal-confirm-btns .ant-btn-primary {
+  background: rgba(255, 77, 79, 0.3) !important;
+  border-color: rgba(255, 77, 79, 0.6) !important;
+  color: #ff4d4f !important;
+}
+
+.ant-modal-footer .ant-btn-primary.ant-btn-dangerous {
+  background: rgba(255, 77, 79, 0.3) !important;
+  border-color: rgba(255, 77, 79, 0.6) !important;
+}
+
+/* 确保 Modal.confirm 的内容区域包含按钮 */
+.ant-modal-confirm-body-wrapper {
+  display: block !important;
+}
+
+.ant-modal-confirm-body {
+  display: block !important;
+}
+
+/* 所有 Modal 按钮强制显示 */
+.ant-modal .ant-btn,
+.ant-modal-confirm .ant-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  min-width: 60px !important;
+  font-size: 14px !important;
+}

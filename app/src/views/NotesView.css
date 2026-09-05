@@ -1,0 +1,180 @@
+.notes-view {
+  width: 100%;
+  height: calc(100vh - 16px);
+  display: grid;
+  grid-template-columns: 240px minmax(0, 1fr);
+  gap: 16px;
+}
+
+.sticky-note-groups,
+.sticky-note-list {
+  overflow: auto;
+  padding: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+}
+
+.sticky-note-groups__header,
+.sticky-note-list__header,
+.sticky-note-groups__item,
+.sticky-note-list__actions {
+  display: flex;
+  align-items: center;
+}
+
+.sticky-note-groups__header,
+.sticky-note-list__header {
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.sticky-note-groups__header h3,
+.sticky-note-list__header h3 {
+  margin: 0;
+  color: var(--glass-text-primary);
+}
+
+.sticky-note-list__header span {
+  color: var(--glass-text-tertiary);
+  font-size: 13px;
+}
+
+.sticky-note-groups__item {
+  width: 100%;
+  min-height: 44px;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  padding: 0 12px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+  color: var(--glass-text-secondary);
+  background: rgba(255, 255, 255, 0.08);
+  cursor: pointer;
+}
+
+.sticky-note-groups__item--active {
+  color: var(--glass-text-primary);
+  border-color: rgba(24, 144, 255, 0.55);
+  background: rgba(24, 144, 255, 0.16);
+}
+
+.sticky-note-list__items {
+  display: grid;
+  gap: 12px;
+}
+
+.sticky-note-list__row {
+  display: grid;
+  gap: 8px;
+}
+
+.sticky-note-list__actions {
+  flex-wrap: wrap;
+  gap: 8px;
+  padding-left: 8px;
+}
+
+.conversion-record-card {
+  width: 100%;
+  min-height: 72px;
+  display: grid;
+  grid-template-columns: 4px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--glass-text-primary);
+  box-shadow: var(--glass-shadow-sm);
+  text-align: left;
+  cursor: pointer;
+  transition: var(--transition-glass);
+}
+
+.conversion-record-card:hover {
+  background: rgba(255, 255, 255, 0.14);
+  border-color: rgba(255, 255, 255, 0.28);
+  box-shadow: var(--glass-shadow-md);
+}
+
+.conversion-record-card:focus-visible {
+  outline: 2px solid rgba(24, 144, 255, 0.45);
+  outline-offset: 2px;
+}
+
+.conversion-record-card--disabled {
+  cursor: default;
+  opacity: 0.68;
+}
+
+.conversion-record-card--disabled:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.18);
+  box-shadow: var(--glass-shadow-sm);
+}
+
+.conversion-record-card__marker {
+  width: 4px;
+  height: 40px;
+  border-radius: 999px;
+  background: var(--conversion-color, var(--color-note));
+  box-shadow: 0 0 14px color-mix(in srgb, var(--conversion-color, var(--color-note)) 34%, transparent);
+}
+
+.conversion-record-card__body {
+  min-width: 0;
+  display: grid;
+  gap: 7px;
+}
+
+.conversion-record-card__title {
+  overflow: hidden;
+  color: var(--glass-text-primary);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.35;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.conversion-record-card__meta {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  gap: 8px;
+}
+
+.conversion-record-card__pill,
+.conversion-record-card__deleted {
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
+  padding: 0 9px;
+  border-radius: 999px;
+  font-size: 12px;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.conversion-record-card__pill {
+  border: 1px solid color-mix(in srgb, var(--conversion-color, var(--color-note)) 36%, rgba(255, 255, 255, 0.22));
+  background: color-mix(in srgb, var(--conversion-color, var(--color-note)) 16%, rgba(255, 255, 255, 0.08));
+  color: var(--glass-text-secondary);
+}
+
+.conversion-record-card__deleted {
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--glass-text-tertiary);
+}
+
+.conversion-record-card__time {
+  color: var(--glass-text-tertiary);
+  font-size: 12px;
+  white-space: nowrap;
+}
