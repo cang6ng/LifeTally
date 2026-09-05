@@ -34,7 +34,7 @@
   "dependencies": {
     "@ant-design/icons": "^5.3.7",
     "antd": "^5.20.0",
-    "date-fns": "^3.6.0",
+    "date-fns": "^4.4.0",
     "dayjs": "^1.11.21",
     "idb": "^8.0.0",
     "react": "^18.3.1",
